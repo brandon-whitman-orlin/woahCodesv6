@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
 
@@ -7,11 +7,24 @@ import { ReactComponent as Close } from "../../assets/icons/close.svg";
 
 const Navbar = ({ name, children, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const combinedClassName = `navbar ${className}`.trim();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleNav = () => {
     setIsOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY >= 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // check on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const combinedClassName = `navbar ${className} ${isScrolled ? "scrolled" : ""}`.trim();
 
   return (
     <nav className={combinedClassName}>
@@ -31,7 +44,6 @@ const Navbar = ({ name, children, className = "" }) => {
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement(child)) {
             const handleInteraction = (e) => {
-              // Allow keyboard activation with Enter or Space
               if (
                 e.type === "click" ||
                 (e.type === "keydown" && (e.key === "Enter" || e.key === " "))

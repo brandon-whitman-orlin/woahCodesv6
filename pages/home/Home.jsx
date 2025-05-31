@@ -12,8 +12,8 @@ import AvatarWave from "../../assets/images/avatar_wave.webp";
 
 function Home() {
   return (
-    <div className="page">
-      <Navbar name="woahCodes">
+    <div className="page lock-screen">
+      <Navbar name="woahCodes" className="delay3">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="/blog">Blog</a>
@@ -21,8 +21,8 @@ function Home() {
         <a href="#contact">Contact</a>
       </Navbar>
       <Hero image={HeroVideo} alt={"Alt"}>
-        <p className="fadeIn delay1">code that makes you say</p>
-        <h1 className="fadeIn delay2">woah</h1>
+        <p className="delay1">code that makes you say</p>
+        <h1 className="delay2">woah</h1>
       </Hero>
       <PageSection>
         <h2 className="section-title" id="about">

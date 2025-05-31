@@ -8,6 +8,12 @@
   justify-content: space-between;
   align-items: center;
   font-family: "Space Grotesk";
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: var(--color-surface);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 0.5rem;
 }
 
 .site-link {
@@ -120,7 +126,7 @@
 }
 
 .open-nav:focus-visible svg path {
-    fill: var(--color-bg);
+  fill: var(--color-bg);
 }
 
 .open-nav:focus-visible[data-open="true"] {
@@ -129,7 +135,7 @@
 }
 
 .open-nav:focus-visible[data-open="true"] svg path {
-    fill: var(--color-text);
+  fill: var(--color-text);
 }
 
 .small-navigation {
@@ -173,6 +179,14 @@
 }
 
 @media (max-width: 850px) {
+  .navbar {
+    padding: 0rem 0.5rem;
+  }
+
+  .site-link {
+    font-size: 1.5rem;
+  }
+
   .open-nav {
     display: grid;
   }
