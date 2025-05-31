@@ -44,7 +44,7 @@
 .section-text {
   width: fit-content;
   color: var(--color-text-muted);
-  max-width: max(40%, 300px);
+  max-width: max(30%, 300px);
 }
 
 .avatar {
