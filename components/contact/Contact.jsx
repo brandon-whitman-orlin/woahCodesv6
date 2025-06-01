@@ -30,13 +30,14 @@ function Contact() {
       method="post"
     >
       <div>
-        <label htmlFor="name">Your Name</label>
+        <label htmlFor="contact-name">Your Name</label>
         <input
           type="text"
-          id="name"
+          id="contact-name"
           name="name"
           placeholder="What should I call you?"
           required
+          autoComplete="name"
         />
       </div>
       <div>
@@ -59,10 +60,10 @@ function Contact() {
         </select>
       </div>
       <div>
-        <label htmlFor="contact">Your Contact Info</label>
+        <label htmlFor="contact-info">Your Contact Info</label>
         <input
           type="text"
-          id="contact"
+          id="contact-info"
           name="contact"
           placeholder={placeholder}
           required
@@ -70,9 +71,9 @@ function Contact() {
         />
       </div>
       <div>
-        <label htmlFor="message">Reason for Contact</label>
+        <label htmlFor="contact-message">Reason for Contact</label>
         <textarea
-          id="message"
+          id="contact-message"
           name="message"
           rows="5"
           placeholder="Tell me what's on your mind :D"

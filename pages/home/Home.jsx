@@ -7,6 +7,8 @@ import PageSection from "../../components/pagesection/PageSection";
 import ItemGrid from "../../components/itemgrid/ItemGrid";
 import Contact from "../../components/contact/Contact";
 
+import Background from '../../components/background/Background';
+
 import AvatarWave from "../../assets/images/avatar_wave.webp";
 import AvatarHeart from "../../assets/images/avatar_heart.webp";
 import AvatarHey from "../../assets/images/avatar_hey.webp";
@@ -21,6 +23,7 @@ import Niceopods from "../../assets/videos/niceopods.mp4";
 function Home() {
   return (
     <div className="page lock-screen">
+      <Background />
       <Navbar name="woahCodes" className="delay3">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
