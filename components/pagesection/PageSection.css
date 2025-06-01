@@ -228,6 +228,12 @@
   }
 }
 
+@media (max-width: 931px) {
+  .section-heading {
+    padding-top: 1rem;
+  }
+}
+
 @media (max-width: 900px) {
   .section-title {
     scroll-margin: 5rem;
