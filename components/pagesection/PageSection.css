@@ -5,6 +5,7 @@
   align-items: center;
   padding: max(5vw, 2rem);
   text-align: center;
+  background: radial-gradient(circle at bottom, var(--color-black) 0%, var(--color-bg) 60%)
 }
 
 .page-section.two-column {
@@ -44,7 +45,7 @@
 .section-text {
   width: fit-content;
   color: var(--color-text-muted);
-  max-width: max(30%, 300px);
+  max-width: min(328px, 100%);
 }
 
 .avatar {
