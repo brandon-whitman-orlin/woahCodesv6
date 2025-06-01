@@ -1,0 +1,33 @@
+.article-list {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+
+.article-list-listmode {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  width: min(100%, 60rem);
+  position: relative;
+}
+
+.article-list-listmode > li {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .article-list-listmode {
+    gap: 0rem;
+  }
+}

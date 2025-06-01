@@ -16,6 +16,11 @@
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 0.5rem;
 }
 
+:not(.lock-screen) .navbar {
+  background-color: var(--color-surface);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 0.5rem;
+}
+
 .site-link {
   display: flex;
   justify-content: center;

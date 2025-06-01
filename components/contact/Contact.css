@@ -76,7 +76,8 @@
 }
 
 .contact-form input:hover, .contact-form select:hover, .contact-form textarea:hover, 
-.contact-form input:focus-visible, .contact-form select:focus-visible, .contact-form textarea:focus-visible {
+.contact-form input:focus-visible, .contact-form select:focus-visible, .contact-form textarea:focus-visible,
+.contact-form input:not(:placeholder-shown), .contact-form select:not(:placeholder-shown), .contact-form textarea:not(:placeholder-shown) {
     background-color: var(--color-text);
 }
 

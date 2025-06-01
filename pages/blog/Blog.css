@@ -1,0 +1,69 @@
+.section-heading {
+  padding-top: 0;
+}
+
+.blog-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: min(100%, 50rem);
+  margin-bottom: 1rem;
+}
+
+.blog-search-button {
+  height: 100%;
+  width: fit-content;
+  position: absolute;
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  right: 0.5rem;
+}
+
+.blog-search-button svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.blog-search-button svg path {
+  fill: var(--color-bg-faded);
+}
+
+.blog-search-form label {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.blog-search-input {
+  background-color: var(--color-text-muted);
+  color: var(--color-bg);
+  width: 100%;
+  border-radius: var(--border-radius);
+  outline: none;
+  border: none;
+  padding: 1rem;
+  transition: all 0.1s ease-in-out;
+  font-family: "Inter";
+  appearance: none;
+}
+
+.blog-search-input::placeholder {
+  color: var(--color-bg-faded);
+  font-family: "Inter";
+}
+
+.blog-search-input:hover,
+.blog-search-input:focus-visible,
+.blog-search-input:not(:placeholder-shown) {
+  background-color: var(--color-text);
+}
+
+.blog-search-input:hover + .blog-search-button svg path,
+.blog-search-input:focus-visible + .blog-search-button svg path,
+.blog-search-input:not(:placeholder-shown) + .blog-search-button svg path {
+  fill: var(--color-primary);
+}
+
