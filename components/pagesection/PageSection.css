@@ -3,9 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: max(5vw, 2rem);
+  padding: min(5vw, 2rem);
   text-align: center;
-  background: radial-gradient(circle at bottom, var(--color-black) 0%, var(--color-bg) 60%)
+  background-color: var(--color-bg);
+}
+
+.page-section:not(:first-of-type) {
+  padding-top: 10rem;
 }
 
 .page-section.two-column {
@@ -17,7 +21,11 @@
   width: 100%;
   text-align: left;
   color: var(--color-text-muted);
-  margin-bottom: 4rem;
+  scroll-margin: 10rem;
+}
+
+.invert .section-title {
+  text-align: right;
 }
 
 .section-content {
@@ -28,24 +36,26 @@
   flex-wrap: wrap;
 }
 
+.invert .section-content {
+  flex-direction: row-reverse;
+}
+
 .section-text {
   text-align: left;
   font-size: 1.4rem;
   width: fit-content;
 }
 
-.section-blurb {
-}
-
 .section-heading {
   color: var(--color-text);
   font-size: min(3rem, calc(1rem + 7vw));
+  padding-top: 10rem;
 }
 
 .section-text {
   width: fit-content;
   color: var(--color-text-muted);
-  max-width: min(328px, 100%);
+  max-width: min(500px, 100%);
 }
 
 .avatar {
@@ -70,6 +80,50 @@
   animation: pulseGlow 3s infinite ease-in-out;
 }
 
+.avatar-background.purple {
+  background: radial-gradient(
+    circle at 20% 20%,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  box-shadow: 0 0 0.25rem var(--color-primary),
+    0 0 1rem var(--color-primary-dark);
+  animation: pulseGlow2 3s infinite ease-in-out;
+}
+
+.avatar-background.red {
+  background: radial-gradient(
+    circle at 20% 20%,
+    var(--color-secondary),
+    var(--color-secondary-dark)
+  );
+  box-shadow: 0 0 0.25rem var(--color-secondary),
+    0 0 1rem var(--color-secondary-dark);
+  animation: pulseGlow3 3s infinite ease-in-out;
+}
+
+.avatar-background.green {
+  background: radial-gradient(
+    circle at 20% 20%,
+    var(--color-tertiary),
+    var(--color-tertiary-dark)
+  );
+  box-shadow: 0 0 0.25rem var(--color-tertiary),
+    0 0 1rem var(--color-tertiary-dark);
+  animation: pulseGlow4 3s infinite ease-in-out;
+}
+
+.avatar-background.blue {
+  background: radial-gradient(
+    circle at 20% 20%,
+    var(--color-quaternary),
+    var(--color-quaternary-dark)
+  );
+  box-shadow: 0 0 0.25rem var(--color-quaternary),
+    0 0 1rem var(--color-quaternary-dark);
+  animation: pulseGlow5 3s infinite ease-in-out;
+}
+
 .avatar img {
   width: 90%;
   height: auto;
@@ -91,6 +145,30 @@
   );
 }
 
+.cta-button {
+  padding: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  border-radius: calc(var(--border-radius) / 2);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-family: "Space Grotesk";
+  transition: all 0.3s ease-in-out;
+  margin-top: 5rem;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  color: var(--color-primary);
+  background-color: var(--color-text);
+}
+
+.cta-button:focus-visible {
+  outline: 0.25rem solid var(--color-text);
+}
+
 @keyframes pulseGlow {
   0%,
   100% {
@@ -100,5 +178,65 @@
   50% {
     box-shadow: 0 0 0.75rem var(--color-accent),
       0 0 1.5rem var(--color-accent-dark);
+  }
+}
+
+@keyframes pulseGlow2 {
+  0%,
+  100% {
+    box-shadow: 0 0 0.25rem var(--color-primary),
+      0 0 1rem var(--color-primary-dark);
+  }
+  50% {
+    box-shadow: 0 0 0.75rem var(--color-primary),
+      0 0 1.5rem var(--color-primary-dark);
+  }
+}
+
+@keyframes pulseGlow3 {
+  0%,
+  100% {
+    box-shadow: 0 0 0.25rem var(--color-secondary),
+      0 0 1rem var(--color-secondary-dark);
+  }
+  50% {
+    box-shadow: 0 0 0.75rem var(--color-secondary),
+      0 0 1.5rem var(--color-secondary-dark);
+  }
+}
+
+@keyframes pulseGlow4 {
+  0%,
+  100% {
+    box-shadow: 0 0 0.25rem var(--color-tertiary),
+      0 0 1rem var(--color-tertiary-dark);
+  }
+  50% {
+    box-shadow: 0 0 0.75rem var(--color-tertiary),
+      0 0 1.5rem var(--color-tertiary-dark);
+  }
+}
+
+@keyframes pulseGlow5 {
+  0%,
+  100% {
+    box-shadow: 0 0 0.25rem var(--color-quaternary),
+      0 0 1rem var(--color-quaternary-dark);
+  }
+  50% {
+    box-shadow: 0 0 0.75rem var(--color-quaternary),
+      0 0 1.5rem var(--color-quaternary-dark);
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    scroll-margin: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    text-align: center !important;
   }
 }

@@ -3,9 +3,17 @@
 :root {
   /* Color Palette */
   --color-primary: #7c3aed;
+  --color-primary-dark: #481d92;
+  --color-secondary: #ed3a3a;
+  --color-secondary-dark: #921d1d;
+  --color-tertiary: #4fed3a;
+  --color-tertiary-dark: #1d921d;
+  --color-quaternary: #3a3ded;
+  --color-quaternary-dark: #1f1d92;
   --color-accent: #fbbf24;
   --color-accent-dark: #694e09;
-  --color-bg: #0f172a;
+  --color-bg: #0f172a;  
+  --color-bg-faded: #292c35;
   --color-surface: #1e293b;
   --color-text: #f8fafc;
   --color-text-muted: #94a3b8;
