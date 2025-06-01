@@ -1,11 +1,13 @@
-import React, { useRef, useEffect } from 'react';
-import p5 from 'p5';
+import React, { useRef, useEffect } from "react";
+import p5 from "p5";
 import "./Background.css";
 
-const Background = () =>  {
+const Background = () => {
   const sketchRef = useRef();
 
   useEffect(() => {
+    p5.disableFriendlyErrors = true;
+
     const sketch = (p) => {
       p.setup = () => {
         p.createCanvas(p.windowWidth, p.windowHeight);
@@ -27,9 +29,9 @@ const Background = () =>  {
     const canvas = new p5(sketch, sketchRef.current);
 
     // Give the actual canvas the "background" class
-    const canvasElement = sketchRef.current.querySelector('canvas');
+    const canvasElement = sketchRef.current.querySelector("canvas");
     if (canvasElement) {
-      canvasElement.classList.add('background');
+      canvasElement.classList.add("background");
     }
 
     return () => {
@@ -37,7 +39,19 @@ const Background = () =>  {
     };
   }, []);
 
-  return <div className="background" ref={sketchRef} style={{ position: 'fixed', top: 0, left: 0, opacity: 0.05, pointerEvents: "none"}} />;
+  return (
+    <div
+      className="background"
+      ref={sketchRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        opacity: 0.05,
+        pointerEvents: "none",
+      }}
+    />
+  );
 };
 
 export default Background;

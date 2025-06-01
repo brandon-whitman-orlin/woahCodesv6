@@ -1,0 +1,17 @@
+.footing {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-surface);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.footing-text {
+    text-align: center;
+    font-family: "Space Grotesk";
+}

@@ -6,6 +6,7 @@ import Hero from "../../components/hero/Hero";
 import PageSection from "../../components/pagesection/PageSection";
 import ItemGrid from "../../components/itemgrid/ItemGrid";
 import Contact from "../../components/contact/Contact";
+import Footing from "../../components/footing/Footing";
 
 import Background from '../../components/background/Background';
 
@@ -181,6 +182,7 @@ function Home() {
         </div>
         <Contact />
       </PageSection>
+      <Footing />
     </div>
   );
 }
