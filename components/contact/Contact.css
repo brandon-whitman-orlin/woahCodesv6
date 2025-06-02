@@ -45,6 +45,7 @@
     background-position: right -0.5rem center;
     background-repeat: no-repeat;
     background-size: 1.5rem;
+    cursor: pointer;
 }
 
 .contact-form input, .contact-form select, .contact-form textarea {

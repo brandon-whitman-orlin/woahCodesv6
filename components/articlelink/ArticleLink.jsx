@@ -6,7 +6,7 @@ import { ReactComponent as Clock } from "../../assets/icons/clock.svg";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 import { ReactComponent as Wrench } from "../../assets/icons/wrench.svg";
 
-function ArticleLink({ article, className = "", onTagClick }) {
+function ArticleLink({ article = {}, className = "", onTagClick }) {
   const {
     title,
     publishDate,
@@ -19,8 +19,8 @@ function ArticleLink({ article, className = "", onTagClick }) {
     inProgress,
   } = article;
 
-  // Format publishDate nicely
   const formatDate = (dateStr) => {
+    if (!dateStr) return "";
     const [month, day, year] = dateStr.split("-").map(Number);
     const date = new Date(year, month - 1, day);
     return date.toLocaleDateString(undefined, {
@@ -30,14 +30,18 @@ function ArticleLink({ article, className = "", onTagClick }) {
     });
   };
 
+  // If no folder or title, skip rendering the link entirely
+  if (!folder || !title) return null;
+
   return (
     <article className={`article-link ${className}`}>
       <a
-        href={`/blog/${folder}`}
+        href={article.link || `/blog/${folder}`}
         className="article-link-anchor"
         aria-label={`Read article: ${title}`}
+        target={article.link ? "_blank" : undefined}
+        rel={article.link ? "noopener noreferrer" : undefined}
       >
-        {/* Cover image if present */}
         {coverImage && (
           <img
             src={coverImage}
@@ -47,9 +51,8 @@ function ArticleLink({ article, className = "", onTagClick }) {
           />
         )}
 
-        <h4 className="article-link-title">{title}</h4>
+        {title && <h4 className="article-link-title">{title}</h4>}
 
-        {/* ✨ NEW: Labels for featured/in-progress */}
         {(featured || inProgress) && (
           <div className="article-link-flags">
             {featured && (
@@ -67,38 +70,44 @@ function ArticleLink({ article, className = "", onTagClick }) {
           </div>
         )}
 
-        <div className="article-info">
-          <div className="article-publish">
-            <Calendar />
-            <time className="article-link-date" dateTime={publishDate}>
-              {formatDate(publishDate)}
-            </time>
+        {(publishDate || readingTime) && (
+          <div className="article-info">
+            {publishDate && (
+              <div className="article-publish">
+                <Calendar />
+                <time className="article-link-date" dateTime={publishDate}>
+                  {formatDate(publishDate)}
+                </time>
+              </div>
+            )}
+            {readingTime && (
+              <div className="article-reading">
+                <Clock />
+                <p className="article-link-time">{readingTime} minutes</p>
+              </div>
+            )}
           </div>
-          <div className="article-reading">
-            <Clock />
-            <p className="article-link-time">{readingTime} minutes</p>
-          </div>
-        </div>
+        )}
 
-        {/* Summary instead of excerpt */}
         {summary && <p className="article-link-summary">{summary}</p>}
 
-        {/* Tags as a list */}
-        {tags.length > 0 && (
+        {Array.isArray(tags) && tags.length > 0 && (
           <ul className="article-link-tags">
-            {tags.map((tag) => (
-              <li key={tag} className="article-link-tag">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault(); // prevent navigating if inside <a>
-                    onTagClick?.(tag);
-                  }}
-                >
-                  {tag}
-                </button>
-              </li>
-            ))}
+            {tags.map((tag) =>
+              tag ? (
+                <li key={tag} className="article-link-tag">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onTagClick?.(tag);
+                    }}
+                  >
+                    {tag}
+                  </button>
+                </li>
+              ) : null
+            )}
           </ul>
         )}
       </a>

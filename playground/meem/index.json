@@ -1,0 +1,7 @@
+{
+  "title": "Meem",
+  "summary": "Online meme maker with no watermarks.",
+  "link": "https://meem-maker.netlify.app",
+  "coverImage": "cover.png",
+  "tags": ["Vanilla JS", "Tool"]
+}

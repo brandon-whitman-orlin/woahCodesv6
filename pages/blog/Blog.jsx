@@ -9,8 +9,6 @@ import Footing from "../../components/footing/Footing";
 import Background from "../../components/background/Background";
 import AvatarPray from "../../assets/images/avatar_pray.webp";
 
-import { ReactComponent as Magnify } from "../../assets/icons/magnify.svg";
-
 function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -22,11 +20,11 @@ function Blog() {
   };
 
   return (
-    <div className="page">
+    <div id="blog" className="page">
       <Background />
       <Navbar name="woahCodes">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
+        <a href="/#about">About</a>
+        <a href="/#experience">Experience</a>
         <a href="/blog">Blog</a>
         <a href="/playground">Playground</a>
         <a
@@ -35,12 +33,12 @@ function Blog() {
         >
           Resume
         </a>
-        <a href="#contact">Contact</a>
+        <a href="/#contact">Contact</a>
       </Navbar>
       <NavbarSpacer />
 
       <PageSection>
-        <h2 className="section-title" id="about">
+        <h2 className="section-title">
           Blog
         </h2>
         <div className="section-content">
@@ -60,13 +58,10 @@ function Blog() {
           </div>
         </div>
       </PageSection>
-
       <PageSection>
         <h3 className="section-heading">Recent posts</h3>
         <ArticleList source="blog" featuredOnly />
-
         <h3 className="section-heading">All posts</h3>
-
         <form className="blog-search-form" onSubmit={(e) => e.preventDefault()}>
           <label htmlFor="blog-search" className="visually-hidden">
             Search blog posts
@@ -82,7 +77,6 @@ function Blog() {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </form>
-
         <ArticleList
           source="blog"
           listMode
@@ -90,7 +84,6 @@ function Blog() {
           onTagClick={handleTagClick}
         />
       </PageSection>
-
       <Footing />
     </div>
   );

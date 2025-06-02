@@ -11,6 +11,7 @@ const Background = () => {
     const sketch = (p) => {
       p.setup = () => {
         p.createCanvas(p.windowWidth, p.windowHeight);
+        p.frameRate(10);
       };
 
       p.draw = () => {

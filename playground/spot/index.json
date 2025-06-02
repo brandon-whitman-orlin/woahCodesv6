@@ -1,0 +1,7 @@
+{
+  "title": "Spot The Seal",
+  "summary": "Colorful browser \"I Spy\" game with over 30 levels.",
+  "link": "https://spottheseal.netlify.app/",
+  "coverImage": "cover.png",
+  "tags": ["Vanilla JS", "Game"]
+}

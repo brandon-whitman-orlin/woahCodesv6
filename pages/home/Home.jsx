@@ -8,7 +8,7 @@ import ItemGrid from "../../components/itemgrid/ItemGrid";
 import Contact from "../../components/contact/Contact";
 import Footing from "../../components/footing/Footing";
 
-import Background from '../../components/background/Background';
+import Background from "../../components/background/Background";
 
 import AvatarWave from "../../assets/images/avatar_wave.webp";
 import AvatarHeart from "../../assets/images/avatar_heart.webp";
@@ -22,10 +22,43 @@ import Quad from "../../assets/videos/quad.mp4";
 import Niceopods from "../../assets/videos/niceopods.mp4";
 
 function Home() {
+  const [hasHash, setHasHash] = useState(Boolean(location.hash));
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setHasHash(Boolean(location.hash));
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Handle first load
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        // Use smooth scroll if desired
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="page lock-screen">
+    <div id="home" className={`page ${!hasHash ? "lock-screen" : ""}`}>
       <Background />
-      <Navbar name="woahCodes" className="delay3">
+      <Navbar name="woahCodes" className={!hasHash ? "delay3" : ""}>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="/blog">Blog</a>
@@ -39,8 +72,8 @@ function Home() {
         <a href="#contact">Contact</a>
       </Navbar>
       <Hero image={HeroVideo} alt={"Alt"}>
-        <p className="delay1">code that makes you say</p>
-        <h1 className="delay2">woah</h1>
+        <p className={!hasHash ? "delay1" : ""}>code that makes you say</p>
+        <h1 className={!hasHash ? "delay2" : ""}>woah</h1>
       </Hero>
       <PageSection>
         <h2 className="section-title" id="about">

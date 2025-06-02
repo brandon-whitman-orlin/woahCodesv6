@@ -9,16 +9,20 @@
   align-items: center;
   font-family: "Space Grotesk";
   transition: all 0.3s ease-in-out;
-}
-
-.navbar.scrolled {
+  background-color: transparent;
   background-color: var(--color-surface);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 0.5rem;
 }
 
-:not(.lock-screen) .navbar {
+.navbar.scrolled,
+#home .navbar.scrolled {
   background-color: var(--color-surface);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 0.5rem;
+}
+
+#home .navbar {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .site-link {

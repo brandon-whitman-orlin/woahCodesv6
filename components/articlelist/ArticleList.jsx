@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useArticles from "../../scripts/useArticles";
 import ArticleLink from "../../components/articlelink/ArticleLink";
 import "./ArticleList.css";
@@ -9,9 +9,10 @@ function ArticleList({
   listMode = false,
   searchQuery = "",
   onTagClick,
+  className = "", // ← Accept className prop
 }) {
   const articles = useArticles(source);
-  const [visibleCount, setVisibleCount] = useState(5); // ← Step 1
+  const [visibleCount, setVisibleCount] = useState(5);
 
   const filteredArticles = articles
     .filter((article) => !featuredOnly || article.featured)
@@ -21,13 +22,12 @@ function ArticleList({
 
       const inTitle = article.title?.toLowerCase().includes(q);
       const inSummary = article.summary?.toLowerCase().includes(q);
-      const inTags = article.tags?.some((tag) => tag.toLowerCase() === q); // Exact tag match only
+      const inTags = article.tags?.some((tag) => tag.toLowerCase() === q);
 
       return inTitle || inSummary || inTags;
     });
 
-  // Reset visible count if search changes
-  React.useEffect(() => {
+  useEffect(() => {
     setVisibleCount(5);
   }, [searchQuery]);
 
@@ -37,7 +37,7 @@ function ArticleList({
 
     return (
       <>
-        <ul className="article-list-listmode">
+        <ul className={`article-list-listmode ${className}`.trim()}>
           {toShow.map((article) => {
             const classes = ["compressed"];
             if (article.featured) classes.push("featured");
@@ -48,7 +48,7 @@ function ArticleList({
                 <ArticleLink
                   article={article}
                   className={classes.join(" ")}
-                  onTagClick={onTagClick} // ✅ Pass this here too
+                  onTagClick={onTagClick}
                 />
               </li>
             );
@@ -70,7 +70,7 @@ function ArticleList({
 
   // Default (grid) mode
   return (
-    <div className="article-list">
+    <div className={`article-list ${className}`.trim()}>
       {filteredArticles.map((article) => {
         const classes = [];
         if (article.featured) classes.push("featured");

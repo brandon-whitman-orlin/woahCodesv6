@@ -5,7 +5,7 @@ import Z_imagebackground from '../scripts/Z_imagebackground';
 
 import Home from "../pages/home/Home";
 import Blog from "../pages/blog/Blog";
-// import Playground from "../pages/playground/Playground";
+import Playground from "../pages/playground/Playground";
 // import About from "../pages/about/About";
 
 import "./App.css";
@@ -17,7 +17,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        {/* <Route path="/playground" element={<Playground />} /> */}
+        <Route path="/playground" element={<Playground />} />
         {/* <Route path="*" element={<NotFound />}/> */}
       </Routes>
     </div>
