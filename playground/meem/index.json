@@ -3,6 +3,7 @@
   "summary": "Online meme maker with no watermarks.",
   "link": "https://meem-maker.netlify.app",
   "coverImage": "cover.png",
-  "tags": ["Vanilla JS", "Tool"],
-      "publishDate": "10-16-2023"
+  "tags": ["Tool"],
+  "tools": ["HTML", "CSS", "Javascript"],
+  "publishDate": "10-16-2023"
 }

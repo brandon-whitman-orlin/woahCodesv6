@@ -3,6 +3,7 @@
   "summary": "Determine how many plates you need to make a certain weight.",
   "link": "https://weights-8v0g.onrender.com",
   "coverImage": "cover.png",
-  "tags": ["React", "Tool"],
+  "tags": ["Tool"],
+  "tools": ["HTML", "CSS", "React"],
   "publishDate": "5-17-2025"
 }

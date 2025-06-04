@@ -3,6 +3,7 @@
   "summary": "Find out who would win in a fight between 100 men and 1 gorilla!",
   "link": "https://gorilla-irdr.onrender.com",
   "coverImage": "cover.png",
-  "tags": ["PhaserJS", "Simulation"],
-        "publishDate": "4-27-2025"
+  "tags": ["Simulation"],
+  "tools": ["HTML", "CSS", "Phaser"],
+  "publishDate": "4-27-2025"
 }

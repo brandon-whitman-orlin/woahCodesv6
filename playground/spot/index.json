@@ -3,6 +3,7 @@
   "summary": "Colorful browser \"I Spy\" game with over 30 levels.",
   "link": "https://spottheseal.netlify.app/",
   "coverImage": "cover.png",
-  "tags": ["Vanilla JS", "Game"],
-    "publishDate": "10-30-2023"
+  "tags": ["Game"],
+  "tools": ["HTML", "CSS", "Javascript"],
+  "publishDate": "10-30-2023"
 }

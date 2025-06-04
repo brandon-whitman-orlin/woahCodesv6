@@ -5,6 +5,7 @@
   align-items: center;
   padding: min(5vw, 2rem);
   text-align: center;
+  position: relative;
 }
 
 .page-section:not(:first-of-type) {

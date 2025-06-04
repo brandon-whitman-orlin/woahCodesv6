@@ -91,7 +91,7 @@
   color: var(--color-text-muted);
 }
 
-.article-link-tags {
+.article-link-tags, .article-link-tools {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +100,7 @@
   margin-top: 1rem;
 }
 
-.article-link-tag button {
+.article-link-tag button, .article-link-tool {
   background-color: var(--color-bg);
   color: var(--color-text-muted);
   font-family: "Space Grotesk";
@@ -112,15 +112,25 @@
   appearance: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.article-link-tag button:hover,
-.article-link-tag button:focus-visible {
+.article-link-tool img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.article-link-tag button:hover, .article-link-tool:hover,
+.article-link-tag button:focus-visible, .article-link-tool:focus-visible {
   color: var(--color-bg);
   background-color: var(--color-text);
 }
 
-.article-link-tag button:focus-visible {
+.article-link-tag button:focus-visible, .article-link-tool:focus-visible {
   outline: 0.25rem solid var(--color-primary);
 }
 
@@ -206,7 +216,7 @@
   align-items: end;
 }
 
-.article-link.compressed .article-link-tags {
+.article-link.compressed .article-link-tags, .article-link.compressed .article-link-tools {
   flex-direction: row;
   width: fit-content;
   margin-top: 0;
@@ -230,7 +240,7 @@
 }
 
 @media (max-width: 970px) {
-  .article-link.compressed .article-link-tags {
+  .article-link.compressed .article-link-tags, .article-link.compressed .article-link-tools {
     display: none;
   }
   

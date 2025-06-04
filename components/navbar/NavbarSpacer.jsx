@@ -4,29 +4,28 @@ const NavbarSpacer = () => {
   const [height, setHeight] = useState(0);
 
   const updateHeight = () => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-      setHeight(navbar.offsetHeight);
-    }
+    requestAnimationFrame(() => {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        setHeight(navbar.offsetHeight);
+      }
+    });
   };
 
   useEffect(() => {
     updateHeight();
 
-    window.addEventListener('resize', updateHeight);
-    window.addEventListener('scroll', updateHeight); // Optional: if navbar resizes during scroll
-
-    // Optional: handle DOM updates that may affect height
-    const observer = new MutationObserver(updateHeight);
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
-      observer.observe(navbar, { attributes: true, childList: true, subtree: true });
-    }
+    if (!navbar) return;
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(navbar);
+
+    window.addEventListener('resize', updateHeight);
 
     return () => {
+      resizeObserver.disconnect();
       window.removeEventListener('resize', updateHeight);
-      window.removeEventListener('scroll', updateHeight);
-      observer.disconnect();
     };
   }, []);
 

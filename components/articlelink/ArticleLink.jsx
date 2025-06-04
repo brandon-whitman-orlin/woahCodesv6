@@ -6,6 +6,26 @@ import { ReactComponent as Clock } from "../../assets/icons/clock.svg";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 import { ReactComponent as Wrench } from "../../assets/icons/wrench.svg";
 
+import ReactIcon from "../../assets/icons/react.png";
+import JavascriptIcon from "../../assets/icons/javascript.png";
+import TypescriptIcon from "../../assets/icons/typescript.png";
+import AngularIcon from "../../assets/icons/angular.png";
+import PhaserIcon from "../../assets/icons/phaser.png";
+import HTMLIcon from "../../assets/icons/HTML.png";
+import CSSIcon from "../../assets/icons/CSS.png";
+import SCSSIcon from "../../assets/icons/SCSS.png";
+
+const toolIconMap = {
+  React: ReactIcon,
+  Javascript: JavascriptIcon,
+  Typescript: TypescriptIcon,
+  Angular: AngularIcon,
+  Phaser: PhaserIcon,
+  HTML: HTMLIcon,
+  CSS: CSSIcon,
+  SCSS: SCSSIcon,
+};
+
 function ArticleLink({ article = {}, className = "", onTagClick }) {
   const {
     title,
@@ -14,6 +34,7 @@ function ArticleLink({ article = {}, className = "", onTagClick }) {
     summary,
     coverImage,
     tags = [],
+    tools = [],
     folder,
     featured,
     inProgress,
@@ -30,7 +51,6 @@ function ArticleLink({ article = {}, className = "", onTagClick }) {
     });
   };
 
-  // If no folder or title, skip rendering the link entirely
   if (!folder || !title) return null;
 
   return (
@@ -108,6 +128,28 @@ function ArticleLink({ article = {}, className = "", onTagClick }) {
                 </li>
               ) : null
             )}
+          </ul>
+        )}
+
+        {Array.isArray(tools) && tools.length > 0 && (
+          <ul className="article-link-tools">
+            {tools.map((tool) => {
+              if (!tool) return null;
+              const iconSrc = toolIconMap[tool];
+              return (
+                <li key={tool} className="article-link-tool">
+                  {iconSrc && (
+                    <img
+                      src={iconSrc}
+                      alt={`${tool} icon`}
+                      className="tool-icon"
+                      loading="lazy"
+                    />
+                  )}
+                  <span>{tool}</span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </a>
