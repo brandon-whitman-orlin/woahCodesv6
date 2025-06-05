@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "prebuild": "node scripts/generateReadingTimes.mjs",
+    "predev": "node scripts/generateReadingTimes.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

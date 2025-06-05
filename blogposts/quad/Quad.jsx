@@ -20,8 +20,6 @@ import param from "./assets/param.jpg";
 import quad_now from "./assets/quad-now.png";
 
 function Quad() {
-  const [readingTime, setReadingTime] = useState(null);
-
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const [month, day, year] = dateStr.split("-").map(Number);
@@ -32,33 +30,6 @@ function Quad() {
       day: "numeric",
     });
   };
-
-  useEffect(() => {
-    const blogpostEl = document.querySelector(".blogpost");
-    if (!blogpostEl) return;
-
-    let totalWords = 0;
-
-    const walkNodes = (node) => {
-      if (
-        node.nodeType === Node.ELEMENT_NODE ||
-        node.nodeType === Node.DOCUMENT_FRAGMENT_NODE
-      ) {
-        for (const child of node.childNodes) {
-          walkNodes(child);
-        }
-      } else if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent || "";
-        const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
-        totalWords += wordCount;
-      }
-    };
-
-    walkNodes(blogpostEl);
-
-    const estimatedTime = Math.ceil(totalWords / 200);
-    setReadingTime(estimatedTime);
-  }, []);
 
   return (
     <div className="blog page">
@@ -93,9 +64,7 @@ function Quad() {
             <div className="reading-time blog-information">
               <Clock />
               <p className="blog-time">
-                {readingTime !== null
-                  ? `${readingTime} minute read`
-                  : "[Calculating...]"}
+                {data.readingTime} minute read
               </p>
             </div>
           </div>
