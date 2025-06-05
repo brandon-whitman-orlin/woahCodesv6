@@ -72,7 +72,7 @@ function Quad() {
             <h3 className="blog-heading">How it all started</h3>
             <p className="blog-text">
               In undergrad, I found myself working on a group project with some
-              classmates I only knew somewhat well at the time. I can't even
+              classmates I hardly knew at the time. I can't even
               recall the original assignment anymore—but what I <em>do</em>{" "}
               remember is the energy.
             </p>
@@ -257,7 +257,7 @@ function Quad() {
               >
                 HK Immigration
               </a>
-              , a local immigration company. The site was designed for
+              , a local immigration law firm. The site was designed for
               simplicity and ease-of-use, with careful attention given to
               multi-language accessibility. It was our first time working with a
               real client outside of school, and it gave us a valuable taste of
