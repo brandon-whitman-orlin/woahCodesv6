@@ -5,6 +5,9 @@
   "inProgress": false,
   "summary": "How I formed a startup company while still an undergrad.",
   "coverImage": "cover.png",
-  "readingTime": "5",
-  "tags": ["projects", "websites"]
+  "readingTime": 5,
+  "tags": [
+    "projects",
+    "websites"
+  ]
 }

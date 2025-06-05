@@ -15,12 +15,23 @@
 .blog-heading {
   font-size: 1.5rem;
   margin: revert;
+  margin-top: 5rem;
+}
+
+.blog-heading-small {
+  font-size: 1.2rem;
+  margin-block: 1rem;
+  text-align: left;
+  width: 60ch;
+  max-width: 100%;
 }
 
 .blog-text {
   font-size: 1.2rem;
   max-width: 60ch;
   text-align: left;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .blog-info {
@@ -54,6 +65,53 @@
   padding: 0.25rem;
 }
 
+.blog-image {
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blog-image img {
+  max-height: 50vh;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.blog-image figcaption {
+  position: relative;
+  text-wrap: pretty;
+  font-family: "Inter";
+  text-align: left;
+  max-width: 60ch;
+}
+
+.blogpost a {
+  font-family: "Space Grotesk";
+  color: var(--color-accent);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+}
+
+.blogpost a:hover,
+.blogpost a:focus-visible {
+  text-decoration: none;
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  padding: 0.25rem;
+}
+
+.blogpost a:focus-visible {
+  outline: 0.25rem solid var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
 @media (max-width: 400px) {
   .blog-information {
     font-size: 0.9rem;
@@ -67,5 +125,9 @@
   .blog-info svg {
     width: 1rem;
     height: 1rem;
+  }
+
+  .blog-image {
+    margin-bottom: 0rem;
   }
 }

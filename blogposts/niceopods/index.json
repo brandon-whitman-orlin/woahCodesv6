@@ -1,10 +1,10 @@
 {
   "title": "Niceopods",
   "publishDate": "6-1-2025",
-  "featured": true,
-  "inProgress": false,
+  "featured": false,
+  "inProgress": true,
   "summary": "Building a knowledge hub for an underappreciated animal.",
   "coverImage": "cover.png",
-    "readingTime": "5",
+  "readingTime": "0",
   "tags": ["projects", "websites"]
 }
