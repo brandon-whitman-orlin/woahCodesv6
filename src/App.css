@@ -146,21 +146,27 @@ ol {
   }
 }
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
   cursor: pointer;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--accent);
+  background-color: var(--color-primary);
   border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--color-bg);
+  border-left: 1px solid var(--color-text-supermuted);
   cursor: pointer;
 }
 
 @supports not selector(::-webkit-scrollbar) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--accent) var(--grayed);
+    scrollbar-color: var(--color-primary) var(--color-text-supermuted);;
   }
-} */
+}
