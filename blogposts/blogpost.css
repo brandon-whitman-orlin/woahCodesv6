@@ -116,6 +116,16 @@
   outline-offset: 0.25rem;
 }
 
+.blogpost ul {
+  text-align: left;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+  padding-left: revert;
+  max-width: 60ch;
+}
+
 @media (max-width: 400px) {
   .blog-information {
     font-size: 0.9rem;

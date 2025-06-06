@@ -8,8 +8,7 @@ import Blog from "../pages/blog/Blog";
 import Playground from "../pages/playground/Playground";
 
 import Quad from "../blogposts/quad/Quad";
-
-// import About from "../pages/about/About";
+import Niceopods from "../blogposts/niceopods/Niceopods";
 
 import "./App.css";
 
@@ -23,6 +22,7 @@ const App = () => {
         <Route path="/playground" element={<Playground />} />
 
         <Route path="/blog/quad" element={<Quad />} />
+        <Route path="/blog/niceopods" element={<Niceopods />} />
         {/* <Route path="*" element={<NotFound />}/> */}
       </Routes>
     </div>

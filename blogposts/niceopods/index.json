@@ -5,6 +5,9 @@
   "inProgress": true,
   "summary": "Building a knowledge hub for an underappreciated animal.",
   "coverImage": "cover.png",
-  "readingTime": "0",
-  "tags": ["projects", "websites"]
+  "readingTime": 5,
+  "tags": [
+    "projects",
+    "websites"
+  ]
 }
