@@ -15,6 +15,7 @@ function ArticleList({
   const [visibleCount, setVisibleCount] = useState(5);
 
   const filteredArticles = articles
+    .filter((article) => !article.inProgress) // ← Exclude in-progress articles
     .filter((article) => !featuredOnly || article.featured)
     .filter((article) => {
       const q = searchQuery.trim().toLowerCase();

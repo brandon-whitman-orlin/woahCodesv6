@@ -94,6 +94,7 @@
   font-family: "Inter";
   text-align: left;
   max-width: 60ch;
+  font-size: min(1rem, 25vw);
 }
 
 .blogpost a {

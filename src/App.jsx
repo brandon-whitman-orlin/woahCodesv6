@@ -9,6 +9,7 @@ import Playground from "../pages/playground/Playground";
 
 import Quad from "../blogposts/quad/Quad";
 import Niceopods from "../blogposts/niceopods/Niceopods";
+import Nabely from "../blogposts/nabely/Nabely";
 
 import "./App.css";
 
@@ -23,6 +24,7 @@ const App = () => {
 
         <Route path="/blog/quad" element={<Quad />} />
         <Route path="/blog/niceopods" element={<Niceopods />} />
+        <Route path="/blog/nabely" element={<Nabely />} />
         {/* <Route path="*" element={<NotFound />}/> */}
       </Routes>
     </div>

@@ -1,10 +1,13 @@
 {
   "title": "Nabely",
   "publishDate": "6-1-2025",
-  "featured": false,
-  "inProgress": true,
+  "featured": true,
+  "inProgress": false,
   "summary": "Developing a mobile app and saving the world.",
   "coverImage": "cover.png",
-  "readingTime": "0",
-  "tags": ["projects", "websites"]
+  "readingTime": 5,
+  "tags": [
+    "projects",
+    "websites"
+  ]
 }

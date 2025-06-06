@@ -1,8 +1,8 @@
 {
   "title": "Niceopods",
   "publishDate": "6-1-2025",
-  "featured": false,
-  "inProgress": true,
+  "featured": true,
+  "inProgress": false,
   "summary": "Building a knowledge hub for an underappreciated animal.",
   "coverImage": "cover.png",
   "readingTime": 5,
