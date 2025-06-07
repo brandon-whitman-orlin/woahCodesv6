@@ -201,12 +201,12 @@ function Nabely() {
               duplicated logic.
             </p>
             <p className="blog-text">
-              As the project matured (and I did, too), I rebuilt major parts of
-              the app using <strong>React</strong>. It made the structure more
-              modular, reusable, and scalable. I also introduced{" "}
-              <strong>Zustand</strong> as a lightweight state management tool to
-              pass data—like upcoming events and location-based
-              recommendations—between different parts of the app.
+              As the project matured, so did I as a developer. I decided to
+              rebuild major parts of the app using <strong>React</strong>. It
+              made the structure more modular, reusable, and scalable. I also
+              introduced <strong>Zustand</strong> as a lightweight state
+              management tool to pass data—like upcoming events and
+              location-based recommendations—between different parts of the app.
             </p>
             <p className="blog-text">
               One of the biggest UI challenges was figuring out how to fit a lot
@@ -238,8 +238,8 @@ function Nabely() {
               It was tough, sure. But not a failure. We had designed a full
               concept, built real prototypes, worked with local businesses, and
               pitched something we genuinely believed in. We didn't walk away
-              with prize money, but we walked away with something way more
-              important: experience, clarity, and conviction.
+              with prize money, but we gained something way more important:
+              experience, clarity, and conviction.
             </p>
             <figure className="blog-image">
               <img
