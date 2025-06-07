@@ -276,7 +276,7 @@ function Nabely() {
               until it does, Nabely still has a reason to exist.
             </p>
             <p className="blog-text">
-              The world needs Nabely, it just might not be ready for it yet.
+              The world still needs Nabely, it just might not be ready for it yet.
             </p>
             <figure className="blog-image">
               <img src={nabely_developers} alt="The developers of Nabely" />
