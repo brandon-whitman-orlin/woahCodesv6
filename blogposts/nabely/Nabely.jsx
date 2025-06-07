@@ -267,7 +267,7 @@ function Nabely() {
               all along.
             </p>
             <p className="blog-text">
-              As for Nabely? It's still alive—just...dormant.
+              As for Nabely? It's still alive—just... dormant.
             </p>
             <p className="blog-text">
               We've all agreed: if the timing ever feels right again, we'd
