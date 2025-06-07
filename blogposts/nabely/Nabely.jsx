@@ -100,8 +100,8 @@ function Nabely() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shuvaev.
-                </a>
+                  Shuvaev
+                </a>.
               </figcaption>
             </figure>
 
