@@ -100,8 +100,8 @@ function Nabely() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shuvaev.
-                </a>
+                  Shuvaev
+                </a>.
               </figcaption>
             </figure>
 
@@ -267,7 +267,7 @@ function Nabely() {
               all along.
             </p>
             <p className="blog-text">
-              As for Nabely? It's still alive—just...dormant.
+              As for Nabely? It's still alive—just... dormant.
             </p>
             <p className="blog-text">
               We've all agreed: if the timing ever feels right again, we'd
@@ -276,7 +276,7 @@ function Nabely() {
               until it does, Nabely still has a reason to exist.
             </p>
             <p className="blog-text">
-              The world needs Nabely, it just might not be ready for it yet.
+              The world still needs Nabely, it just might not be ready for it yet.
             </p>
             <figure className="blog-image">
               <img src={nabely_developers} alt="The developers of Nabely" />
