@@ -49,7 +49,7 @@ function Nabely() {
       </Navbar>
       <NavbarSpacer />
       {/* START_CONTENT */}
-      <div className="blogpost">
+      <article className="blogpost">
         <PageSection>
           <img src={heroImage} alt="Quad Consultation" className="blog-hero" />
           <h1 className="blog-title">{data.title}</h1>
@@ -335,9 +335,20 @@ function Nabely() {
               I'm most proud of. And who knows? The world could always use
               another third place.
             </p>
+                        <p className="blog-text">
+              If you want to check {" "}
+              <a
+                href="https://nabely.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Nabely
+              </a>{" "}
+              out in its current state, you can!
+            </p>
           </div>
         </PageSection>
-      </div>
+      </article>
       {/* END_CONTENT */}
       <Footing />
     </div>

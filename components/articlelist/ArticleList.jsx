@@ -9,21 +9,28 @@ function ArticleList({
   listMode = false,
   searchQuery = "",
   onTagClick,
-  className = "", // ← Accept className prop
+  className = "",
 }) {
   const articles = useArticles(source);
   const [visibleCount, setVisibleCount] = useState(5);
 
   const filteredArticles = articles
-    .filter((article) => !article.inProgress) // ← Exclude in-progress articles
+    .filter((article) => !article.inProgress)
     .filter((article) => !featuredOnly || article.featured)
     .filter((article) => {
-      const q = searchQuery.trim().toLowerCase();
-      if (!q) return true;
+      const queryTags = searchQuery
+        .split(",")
+        .map((tag) => tag.trim().toLowerCase())
+        .filter(Boolean);
 
-      const inTitle = article.title?.toLowerCase().includes(q);
-      const inSummary = article.summary?.toLowerCase().includes(q);
-      const inTags = article.tags?.some((tag) => tag.toLowerCase() === q);
+      if (queryTags.length === 0) return true;
+
+      const inTitle = article.title?.toLowerCase().includes(searchQuery.toLowerCase());
+      const inSummary = article.summary?.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const articleTags = article.tags?.map((tag) => tag.toLowerCase()) || [];
+
+      const inTags = queryTags.some((qt) => articleTags.includes(qt));
 
       return inTitle || inSummary || inTags;
     });
@@ -69,7 +76,6 @@ function ArticleList({
     );
   }
 
-  // Default (grid) mode
   return (
     <div className={`article-list ${className}`.trim()}>
       {filteredArticles.map((article) => {

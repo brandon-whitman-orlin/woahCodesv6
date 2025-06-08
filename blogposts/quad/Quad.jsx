@@ -49,7 +49,7 @@ function Quad() {
       </Navbar>
       <NavbarSpacer />
       {/* START_CONTENT */}
-      <div className="blogpost">
+      <article className="blogpost">
         <PageSection>
           <img src={heroImage} alt="Quad Consultation" className="blog-hero" />
           <h1 className="blog-title">{data.title}</h1>
@@ -336,7 +336,7 @@ function Quad() {
             </p>
           </div>
         </PageSection>
-      </div>
+      </article>
       {/* END_CONTENT */}
       <Footing />
     </div>

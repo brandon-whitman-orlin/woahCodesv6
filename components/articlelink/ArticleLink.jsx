@@ -56,11 +56,17 @@ function ArticleLink({ article = {}, className = "", onTagClick }) {
   return (
     <article className={`article-link ${className}`}>
       <a
-        href={article.link || `/blog/${folder}`}
+        href={
+          article.link?.startsWith("http")
+            ? article.link
+            : `/blog/${article.link || folder}`
+        }
         className="article-link-anchor"
         aria-label={`Read article: ${title}`}
-        target={article.link ? "_blank" : undefined}
-        rel={article.link ? "noopener noreferrer" : undefined}
+        target={article.link?.startsWith("http") ? "_blank" : undefined}
+        rel={
+          article.link?.startsWith("http") ? "noopener noreferrer" : undefined
+        }
       >
         {coverImage && (
           <img
@@ -121,6 +127,7 @@ function ArticleLink({ article = {}, className = "", onTagClick }) {
                     onClick={(e) => {
                       e.preventDefault();
                       onTagClick?.(tag);
+                      console.log("Clicked");
                     }}
                   >
                     {tag}

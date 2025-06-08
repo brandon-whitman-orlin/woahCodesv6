@@ -13,9 +13,13 @@ function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleTagClick = (tag) => {
-    const tags = searchQuery.split(" ").filter(Boolean);
-    if (!tags.includes(tag)) {
-      setSearchQuery((prev) => `${prev} ${tag}`.trim());
+    const tags = searchQuery
+      .split(",")
+      .map((t) => t.trim().toLowerCase())
+      .filter(Boolean);
+
+    if (!tags.includes(tag.toLowerCase())) {
+      setSearchQuery([...tags, tag].join(", "));
     }
   };
 
@@ -38,9 +42,7 @@ function Blog() {
       <NavbarSpacer />
 
       <PageSection>
-        <h2 className="section-title">
-          Blog
-        </h2>
+        <h2 className="section-title">Blog</h2>
         <div className="section-content">
           <div className="avatar">
             <div className="avatar-background green"></div>
@@ -60,7 +62,8 @@ function Blog() {
       </PageSection>
       <PageSection>
         <h3 className="section-heading">Recent posts</h3>
-        <ArticleList source="blog" featuredOnly />
+        <ArticleList source="blog" featuredOnly onTagClick={handleTagClick} />
+
         <h3 className="section-heading">All posts</h3>
         <form className="blog-search-form" onSubmit={(e) => e.preventDefault()}>
           <label htmlFor="blog-search" className="visually-hidden">
@@ -71,7 +74,7 @@ function Blog() {
             id="blog-search"
             name="q"
             className="blog-search-input"
-            placeholder="Search blog posts"
+            placeholder="Search blog posts (comma-separated)"
             autoComplete="off"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -84,6 +87,7 @@ function Blog() {
           onTagClick={handleTagClick}
         />
       </PageSection>
+
       <Footing />
     </div>
   );
